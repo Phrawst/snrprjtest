@@ -15,7 +15,6 @@ table tr:nth-child(even) {
 </style>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
 <body>
-  
  
 <div ng-app="myApp" ng-controller="customersCtrl">
  
@@ -31,7 +30,7 @@ table tr:nth-child(even) {
 <script>
 var app = angular.module('myApp', []);
 app.controller('customersCtrl', function($scope, $http) {
-   $http.get("localhost/Users/WeeraphatP/mbkprj/connect.php")
+   $http.get("customers_mysql.php")
    .then(function (response) {$scope.names = response.data.records;});
 });
 </script>

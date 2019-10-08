@@ -31,7 +31,7 @@
 </html>
 <script>
 
-var fetch = angular.module('mbkprj', []);
+var fetch = angular.module('myapp', []);
 
 fetch.controller('myCtrl', ['$scope', '$http', function ($scope, $http) {
  $http({
@@ -39,7 +39,7 @@ fetch.controller('myCtrl', ['$scope', '$http', function ($scope, $http) {
   url: 'localhost/src/getData.php'
  }).then(function successCallback(response) {
   // Store response data
-  $scope.users = response.data;
+  $scope.parts = response.data;
  });
 }]);
 

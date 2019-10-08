@@ -1,26 +1,39 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-    <head>   
-           
-    </head>
-  
-    <body>
-        <div class="w3-container" id="head"><h2>Dashboard</h2></div>
-    <br>
-        <div class="card">
-            <div class="notiList">Image</div><br>
-            <div class="notiList">Image</div><br>
-            <div class="notiList">Image</div><br>
-            <div class="notiList">Image</div>
-    </div> 
-    </body>
+ <head>
+  <title>How to get data from MySQL with AngularJS - PHP</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
+ 
+ </head>
+ <body ng-app='myapp'>
 
+  <div ng-controller="myCtrl">
+ 
+    <table >
+ 
+      <tr>
+        <th>First name</th>
+        <th>Last name</th>
+        <th>Username</th>
+      </tr>
+  
+      <!-- Display records -->
+      <tr ng-repeat="user in users">
+        <td>{{user.fname}}</td>
+        <td>{{user.lname}}</td>
+        <td>{{user.username}}</td>
+      </tr>
+ 
+    </table>
+  </div>
+ 
+ </body>
 </html>
 <script>
 
 var fetch = angular.module('mbkprj', []);
 
-fetch.controller('userCtrl', ['$scope', '$http', function ($scope, $http) {
+fetch.controller('myCtrl', ['$scope', '$http', function ($scope, $http) {
  $http({
   method: 'get',
   url: 'localhost/src/getData.php'

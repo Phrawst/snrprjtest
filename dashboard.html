@@ -16,3 +16,19 @@
     </body>
 
 </html>
+<script>
+
+var fetch = angular.module('mbkprj', []);
+
+fetch.controller('userCtrl', ['$scope', '$http', function ($scope, $http) {
+ $http({
+  method: 'get',
+  url: 'localhost/src/getData.php'
+ }).then(function successCallback(response) {
+  // Store response data
+  $scope.users = response.data;
+ });
+}]);
+
+
+</script>
